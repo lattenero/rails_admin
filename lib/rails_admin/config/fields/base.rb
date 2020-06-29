@@ -275,7 +275,7 @@ module RailsAdmin
 
         # Reader for field's value
         def value
-          bindings[:object].safe_send(name)
+          bindings[:object].public_send(name)
         rescue NoMethodError => e
           raise e.exception <<-EOM.gsub(/^\s{10}/, '')
           #{e.message}
